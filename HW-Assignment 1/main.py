@@ -2,6 +2,8 @@ import csv
 from customer import customer
 from pprint import pprint
 
+
+
 customer_data = []
 customer_numbers = []
 transactions_history = []
@@ -74,7 +76,7 @@ for cust_nums in customer_master:
                 cost = cost * 1
             print(f"{str_num} bought ${cost} of {transaction[3]}")
             balance_due += cost
-            transaction_info = [transaction[2], transaction[3], cost, round(float(transaction[4]) * float(transaction[5]) - cost, 2)]
+            transaction_info = [transaction[2], transaction[3], cost, round(float(transaction[4]) * float(transaction[5]) - cost, 2), 'O']
         else:
             print(f"{str_num} made a payment of ${float(transaction[4])}") 
             try:
@@ -82,14 +84,29 @@ for cust_nums in customer_master:
                 # balance_due -= float(transaction[4])
             except ValueError:
                 cost = float(transaction[4])
-            balance_due += cost
-            transaction_info = [transaction[2], transaction[3], cost]
+            balance_due -= cost
+            transaction_info = [transaction[2], transaction[3], cost, "P"]
         all_customer_data[str_num]["transactions"].append(transaction_info)
         all_customer_data[str_num]["current balance"] = balance_due
         
 
-pprint(all_customer_data)
-    # print(f"{str_num} owes ${balance_due}")
+pprint(all_customer_data["1001"]['transactions'])
+
+for customer_numbers in all_customer_data:
+    print(f"Customer Name: {customer_master[customer_numbers]['name']}")
+    print(f"Customer Number: {all_customer_data[customer_numbers]["customer number"]}")
+    print(f"Standard Discount: {all_customer_data[customer_numbers]["discount"]}%")
+    print(f"Previous Balance: ${all_customer_data[customer_numbers]["previous balance"]}")
+    for transaction in all_customer_data[customer_numbers]['transactions']:
+        if transaction[-1] == 'O':
+            print(f"{transaction[0]}  {transaction[1]}  "
+                    f"${transaction[2]}  ${transaction[3]}")
+        elif transaction[-1] == 'P':
+            print(f"{transaction[0]}  Payment  {transaction[1]}  "
+                    f"${transaction[2]}")
+    print(f"Balance Due: ${all_customer_data[customer_numbers]["current balance"]}")
+    print("\n")
+#     # print(f"{str_num} owes ${balance_due}")
 
     # print("\n")
 
