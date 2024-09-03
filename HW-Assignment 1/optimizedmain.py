@@ -1,6 +1,5 @@
 import csv
 from pprint import pprint
-#WE GOT O(N + M) BOYS
 
 customer_data = []
 transactions_list = []
@@ -37,11 +36,10 @@ with open("transactions.csv", mode='r') as transactions_file:
             print(f'Error: {row[1]} is not in masters file')
         else:
             transactions_list.append(row)
-i = 1
+
 for transaction in transactions_list:
     if transaction[1] not in cust_nums:
         cust_nums.append(transaction[1])
-        i = 1
         customer_master[transaction[1]]["transactions"] = ""
     balance_due = float(customer_master[transaction[1]]['balance'])
     original_discount = customer_master[transaction[1]]['discount']
