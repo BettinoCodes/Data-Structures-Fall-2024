@@ -1,6 +1,6 @@
 import csv
 from pprint import pprint
-#WE GOT O(N) BOYS
+#WE GOT O(N + M) BOYS
 
 customer_data = []
 transactions_list = []
