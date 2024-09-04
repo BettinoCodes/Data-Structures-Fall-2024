@@ -1,0 +1,30 @@
+Transaction Type,Customer Number,Transaction Number,Item/Payment,Quantity/Amount,Cost,Additional Discount/Promotion
+O,1001,2001,Office Chairs,10,50,20
+P,1001,2002,Payment,500,,10
+O,1001,2003,Desks,5,200,
+P,1001,2004,Payment,400,,
+O,1002,3001,Laptops,3,800,15
+O,1002,3002,Printers,5,120,
+P,1002,3003,Payment,1000,,
+P,1002,3004,Payment,500,,10
+O,1003,4001,Servers,2,1500,10
+P,1003,4002,Payment,1000,,
+O,1003,4003,Monitors,10,150,
+P,1003,4004,Payment,500,,5
+O,1004,5001,Routers,20,40,10
+O,1004,5002,Switches,15,30,
+P,1004,5003,Payment,300,,
+P,1004,5004,Payment,100,,5
+O,1005,6001,Hard Drives,50,70,
+P,1005,6002,Payment,1500,,15
+O,1005,6003,SSDs,25,120,10
+P,1005,6004,Payment,800,,
+O,1006,7001,Tablets,10,300,5
+P,1006,7002,Payment,700,,10
+O,1006,7003,Smartphones,5,500,
+P,1006,7004,Payment,500,,
+O,1007,8001,Keyboards,100,20,
+P,1007,8002,Payment,600,,
+O,1007,8003,Mice,150,10,5
+P,1007,8004,Payment,400,,5
+P,1008,8004,Payment,400,,5
