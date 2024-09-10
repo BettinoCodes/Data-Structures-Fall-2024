@@ -1,9 +1,9 @@
-Customer Number,Customer Name,Balance Due,Standard Discount (%)
-1001,ABC Corporation,1200.00,10
-1002,XYZ Enterprises,2500.00,15
-1003,Delta Solutions,3100.00,5
-1004,Echo Technologies,800.00,8
-1005,Foxtrot Industries,4000.00,12
-1006,Gamma Ltd.,2200.00,7
-1007,Bravo Corp.,1500.00,10
-1001,ABC Corporation,1200.00,10
+Customer Number,Customer Name,Balance Due
+1001,ABC Corporation,1200.00
+1002,XYZ Enterprises,2500.00
+1003,Delta Solutions,3100.00
+1004,Echo Technologies,800.00
+1005,Foxtrot Industries,4000.00
+1006,Gamma Ltd.,2200.00
+1007,Bravo Corp.,1500.00
+1001,ABC Corporation,1200.00
