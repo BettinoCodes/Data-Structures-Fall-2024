@@ -1,0 +1,72 @@
+class Treenode:
+    def __init__(self, value):
+        self.left = None
+        self.right = None
+        self.value = value
+        
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, value):
+        if not self.root:
+            self.root = Treenode(value)
+        else:
+            self.recursion_traversal(self.root, value)
+
+    def recursion_traversal(self, node, value):
+        if not self.root:
+            self.root = Treenode(value)
+            return self.root
+        else:
+            if value < node.value:
+                if node.left is None:
+                    node.left = Treenode(value)
+                else:
+                    self.recursion_traversal(node.left, value)
+            else:
+                if node.right is None:
+                    node.right = Treenode(value)
+                else:
+                    self.recursion_traversal(node.right, value)
+        return self.root    
+
+    def in_order_traversal(self, node=None, result=None):
+        if result is None:
+            result = []
+        if node:
+            self.in_order_traversal(node.left, result)
+            result.append(node.value)
+            self.in_order_traversal(node.right, result)
+        return result
+        
+    def post_traversal(self, node=None, result=None):
+        if result is None:
+            result = []
+        if node:
+            self.post_traversal(node.left, result)
+            self.post_traversal(node.right, result)
+            result.append(node.value)
+        return result
+        
+    def pre_traversal(self, node=None, result=None):
+        if result is None:
+            result = []
+        if node:
+            result.append(node.value)
+            self.pre_traversal(node.left, result)
+            self.pre_traversal(node.right, result)
+        return result
+        
+numbers = [7, 3, 10, 1, 5, 9, 12]
+binary_tree = BinaryTree()
+for num in numbers:
+    binary_tree.recursion_traversal(binary_tree.root, num)
+
+# Check the sorted order using in-order traversal
+sorted_numbers = binary_tree.in_order_traversal(binary_tree.root)
+pre_numbers = binary_tree.pre_traversal(binary_tree.root)
+post_numbers = binary_tree.post_traversal(binary_tree.root)
+print("Sorted numbers:", sorted_numbers)
+print("Sorted numbers:", pre_numbers)
+print("Sorted numbers:", post_numbers)
